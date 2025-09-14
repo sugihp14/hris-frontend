@@ -1,0 +1,904 @@
+{
+	"info": {
+		"_postman_id": "b9c42dc1-885c-4850-8ca9-1669b35914ff",
+		"name": "dexa-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8042509"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test1.user@example.com\",\r\n    \"password\": \"password1234\",\r\n    \"name\": \"Test User\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test1.user@example.com\",\r\n    \"password\": \"password1234\",\r\n    \"name\": \"Test User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"34-bSwQlMyjCkN9L4mxVo/TBbRHpJM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Sep 2025 14:34:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Email already exists.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test.user@example.com\",\r\n    \"password\": \"password1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test.user@example.com\",\r\n    \"password\": \"password1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "498"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f2-0uDVAaIkLKyy99Sy3tVC6horFO0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 Sep 2025 02:08:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4YzcwOTI5NC1lNTMxLTRhNGEtODdiYS1hZjVhY2RkODMwYzgiLCJlbWFpbCI6InRlc3QudXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTc1NzcyOTI4NiwiZXhwIjoxNzU3NzI5MzE2fQ.bzsqbX7gUJrmCRz2-g5B4xx_RSWB1yzOf_tsl94UKQo\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4YzcwOTI5NC1lNTMxLTRhNGEtODdiYS1hZjVhY2RkODMwYzgiLCJlbWFpbCI6InRlc3QudXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTc1NzcyOTI4NiwiZXhwIjoxNzU3ODE1Njg2fQ._jSxmXsmtKyboJNhcE4aONU11T9TMcijRlqJp_ioMKI\"\n}"
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4YzcwOTI5NC1lNTMxLTRhNGEtODdiYS1hZjVhY2RkODMwYzgiLCJlbWFpbCI6InRlc3QudXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTc1NzczMTU2MSwiZXhwIjoxNzU3ODE3OTYxfQ.NHQ00MP_TxxxGla5bctA0ysvVGieo0g_tqGRdDOmqbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "profile",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4f-zdmFfn8xxXkQizfEAG/Kk3H/Tzw\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 12 Sep 2025 14:57:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid or expired token.\",\n    \"error\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmZmY4NTc4OS1iNGY3LTQ5YzUtOTc5Ny0xN2IwOGIwMzFhZTkiLCJlbWFpbCI6InRlc3QxLnVzZXJAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTc2MDI1OTksImV4cCI6MTc1NzY4ODk5OX0.js1MBxra9mBSjJV4o7mqftK4fNSl67BWMpHTEFTxrhw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"081234567890\",\r\n    \"position\": \"Senior Fullstack Developer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\": \"081234567890\",\r\n    \"position\": \"Senior Fullstack Developer \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "255"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ff-bjOIdV1mTa6iv7+Wxys1l2hyycU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Sep 2025 16:54:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"fff85789-b4f7-49c5-9797-17b08b031ae9\",\n    \"email\": \"test1.user@example.com\",\n    \"name\": \"Test User\",\n    \"position\": \"Senior Fullstack Developer \",\n    \"phone\": \"081234567890\",\n    \"photoUrl\": null,\n    \"createdAt\": \"2025-09-11T14:31:28.327Z\",\n    \"updatedAt\": \"2025-09-11T16:54:09.999Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "change-pwd",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmZmY4NTc4OS1iNGY3LTQ5YzUtOTc5Ny0xN2IwOGIwMzFhZTkiLCJlbWFpbCI6InRlc3QxLnVzZXJAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTc2MDI1OTksImV4cCI6MTc1NzY4ODk5OX0.js1MBxra9mBSjJV4o7mqftK4fNSl67BWMpHTEFTxrhw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"currentPassword\": \"password1234\",\r\n    \"newPassword\": \"password12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/change-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"change-password"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "change-pwd",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currentPassword\": \"password1234\",\r\n    \"newPassword\": \"password12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"38-kizX5uKdJd5tPnoMcVVzShnMZBI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Sep 2025 15:23:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Invalid current password.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "clock-in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "POST /attendance/clock-in",
+					"host": [
+						"POST "
+					],
+					"path": [
+						"attendance",
+						"clock-in"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"fff85789-b4f7-49c5-9797-17b08b031ae9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/attendance/clock-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"attendance",
+								"clock-in"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"41-VG6/oJr5eYsnwswVP3SNl/04J5E\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 12 Sep 2025 14:58:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 400,\n    \"message\": \"You have already clocked in today.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "clock-out",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmZmY4NTc4OS1iNGY3LTQ5YzUtOTc5Ny0xN2IwOGIwMzFhZTkiLCJlbWFpbCI6InRlc3QxLnVzZXJAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTc2MDI1OTksImV4cCI6MTc1NzY4ODk5OX0.js1MBxra9mBSjJV4o7mqftK4fNSl67BWMpHTEFTxrhw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"fff85789-b4f7-49c5-9797-17b08b031ae9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/attendance/clock-out",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"attendance",
+						"clock-out"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "clock-out",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"fff85789-b4f7-49c5-9797-17b08b031ae9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/attendance/clock-out",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"attendance",
+								"clock-out"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"45-9QtLUl+ztsKE8h/SDVILADShuTs\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 12 Sep 2025 13:14:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 400,\n    \"message\": \"You must clock in before clocking out.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get-summary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/attendance/summary?userId=fff85789-b4f7-49c5-9797-17b08b031ae9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"attendance",
+						"summary"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "fff85789-b4f7-49c5-9797-17b08b031ae9"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/attendance/summary?userId=fff85789-b4f7-49c5-9797-17b08b031ae9&startDate=2025-09-12&endDate=2025-09-13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"attendance",
+								"summary"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "fff85789-b4f7-49c5-9797-17b08b031ae9"
+								},
+								{
+									"key": "startDate",
+									"value": "2025-09-12"
+								},
+								{
+									"key": "endDate",
+									"value": "2025-09-13"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "308"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"134-Cttq6EoIFOsPF/39NK6N2wheA3g\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 Sep 2025 02:08:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"de44a2e5-2155-4ed3-a181-df6879755e21\",\n        \"timestamp\": \"2025-09-12T13:13:51.379Z\",\n        \"status\": \"CLOCK_OUT\",\n        \"userId\": \"fff85789-b4f7-49c5-9797-17b08b031ae9\"\n    },\n    {\n        \"id\": \"3941c09c-c97a-4a8d-94cb-283a1f78714c\",\n        \"timestamp\": \"2025-09-12T13:14:26.775Z\",\n        \"status\": \"CLOCK_IN\",\n        \"userId\": \"fff85789-b4f7-49c5-9797-17b08b031ae9\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "refresh",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4YzcwOTI5NC1lNTMxLTRhNGEtODdiYS1hZjVhY2RkODMwYzgiLCJlbWFpbCI6InRlc3QudXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTc1NzY4ODkwOCwiZXhwIjoxNzU3Nzc1MzA4fQ.pV5S8ypZ5_3p5svtt--Wako85hpgS0kpSfByVaOsdtM\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4YzcwOTI5NC1lNTMxLTRhNGEtODdiYS1hZjVhY2RkODMwYzgiLCJlbWFpbCI6InRlc3QudXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTc1NzY4ODkwOCwiZXhwIjoxNzU3Nzc1MzA4fQ.pV5S8ypZ5_3p5svtt--Wako85hpgS0kpSfByVaOsdtM\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "498"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f2-XhqgNa0H+y8RgUwdXUAru2CtBoQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 12 Sep 2025 14:57:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4YzcwOTI5NC1lNTMxLTRhNGEtODdiYS1hZjVhY2RkODMwYzgiLCJlbWFpbCI6InRlc3QudXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTc1NzY4OTA2MCwiZXhwIjoxNzU3Njg5MDkwfQ.hHuCihcTLyELRpUCYrPh7CLmv-JXph4aplNCZhEZXvE\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4YzcwOTI5NC1lNTMxLTRhNGEtODdiYS1hZjVhY2RkODMwYzgiLCJlbWFpbCI6InRlc3QudXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTc1NzY4OTA2MCwiZXhwIjoxNzU3Nzc1NDYwfQ.LzpggxAonbOSgCQE9N4tydK2k_nDqH4J8BFCW1NlUU0\"\n}"
+				}
+			]
+		},
+		{
+			"name": "login Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test.user@example.com\",\r\n    \"password\": \"password1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
